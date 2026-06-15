@@ -54,3 +54,18 @@ If you are looking for inspiration, a sample client can be found at [searcher ex
 ## json rpc
 
 [json rpc schema](json_rpc/http.md) explains how to use json rpc for Jito Lab's MEV system.
+
+## Attribution
+
+The protobuf definitions in this repository are derived from [Jito Labs'](https://github.com/jito-labs)
+MEV system schemas. This is a fork maintained by [Astralane](https://github.com/Astralane)
+that packages those definitions as a Rust crate and tracks the current
+tonic / prost toolchain.
+
+All credit for the original schemas belongs to Jito Labs.
+
+## License
+
+Licensed under the [Apache License, Version 2.0](LICENSE).
+
+See [NOTICE](NOTICE) for attribution of the original work and modifications.

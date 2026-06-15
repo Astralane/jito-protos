@@ -20,16 +20,13 @@ bytes = ["dep:bytes"]
 
 [dependencies]
 bytes = { version = "1.11.1", optional = true }
-prost = "0.14.4"
-prost-types = "0.14.4"
-serde = "1.0.228"
-tonic = "0.14.6"
-tonic-prost = "0.14.6"
+prost = "0.14"
+prost-types = "0.14"
+tonic = { version = "0.14", features = ["transport"] }
+tonic-prost = "0.14"
 
 [build-dependencies]
-tonic-prost-build = "0.14.6"
+tonic-prost-build = "0.14"
 
-# windows users should install the protobuf compiler manually and set the PROTOC
-# envar to point to the installed binary
 [target."cfg(not(windows))".build-dependencies]
-protobuf-src = "1.1.0+21.5"
+protobuf-src = "1.1"

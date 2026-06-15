@@ -405,7 +405,6 @@ dependencies = [
  "prost",
  "prost-types",
  "protobuf-src",
- "serde",
  "tonic",
  "tonic-prost",
  "tonic-prost-build",

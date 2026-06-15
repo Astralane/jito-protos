@@ -1,0 +1,17 @@
+jito-protos
+Copyright (c) 2025 Jito Labs
+
+This product includes software developed at Jito Labs (https://github.com/jito-labs).
+
+The protobuf definitions in the `protos/` directory are derived from Jito Labs'
+MEV system schemas and remain Copyright (c) 2025 Jito Labs, licensed under the
+Apache License, Version 2.0.
+
+Modifications in this repository — including the Rust crate packaging, build
+configuration (`build.rs`, `Cargo.toml`), feature gating, and the upgrade to the
+tonic 0.14 / prost 0.14 toolchain — are Copyright (c) 2025 Astralane and are
+likewise licensed under the Apache License, Version 2.0.
+
+You may obtain a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0

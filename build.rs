@@ -1,4 +1,4 @@
-use tonic_prost_build::configure;
+use tonic_build::configure;
 
 fn main() -> Result<(), std::io::Error> {
     const PROTOC_ENVAR: &str = "PROTOC";
@@ -38,16 +38,17 @@ fn main() -> Result<(), std::io::Error> {
         })
         .collect();
 
-    let mut builder = configure()
+    let builder = configure()
         .build_client(build_client)
         .build_server(build_server);
 
+    let mut config = prost_build::Config::new();
     if use_bytes {
         // Generate proto `bytes` fields as `bytes::Bytes` instead of `Vec<u8>`.
-        builder = builder.bytes(".");
+        config.bytes(["."]);
     }
 
-    builder.compile_protos(&protos, &[proto_base_path])?;
+    builder.compile_with_config(config, &protos, &[proto_base_path])?;
 
     Ok(())
 }

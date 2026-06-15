@@ -1,0 +1,35 @@
+[package]
+name = "jito-protos"
+version = "0.1.0"
+edition = "2024"
+description = "Rust gRPC bindings for Jito Labs' MEV system protobuf definitions"
+license = "Apache-2.0"
+repository = "https://github.com/Astralane/jito-protos"
+readme = "README.md"
+# Derived from Jito Labs' protobuf definitions (https://github.com/jito-labs).
+# See NOTICE for attribution.
+
+[features]
+default = ["client", "server", "bytes"]
+# Generate gRPC client stubs.
+client = []
+# Generate gRPC server stubs.
+server = []
+# Generate proto `bytes` fields as `bytes::Bytes` instead of `Vec<u8>`.
+bytes = ["dep:bytes"]
+
+[dependencies]
+bytes = { version = "1.11.1", optional = true }
+prost = "0.14.4"
+prost-types = "0.14.4"
+serde = "1.0.228"
+tonic = "0.14.6"
+tonic-prost = "0.14.6"
+
+[build-dependencies]
+tonic-prost-build = "0.14.6"
+
+# windows users should install the protobuf compiler manually and set the PROTOC
+# envar to point to the installed binary
+[target."cfg(not(windows))".build-dependencies]
+protobuf-src = "1.1.0+21.5"
